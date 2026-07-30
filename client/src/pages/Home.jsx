@@ -11,7 +11,7 @@ import ListingItem from "../components/ListingItem"
 const Home = () => {
 
 
-const VITE_API_URL = import.meta.env.VITE_API_URL;
+const VITE_API_URL = import.meta.env.VITE_API_URL || "/api";
 console.log("API URL:", import.meta.env.VITE_API_URL);
   SwiperCore.use([Navigation]) // FIX: Use array
   const [offerlistings, setofferlistings] = useState([]);
