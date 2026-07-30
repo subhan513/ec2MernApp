@@ -4,7 +4,7 @@ import {useNavigate,useLocation} from "react-router-dom"
 import ListingItem from "../components/ListingItem";
 export default function Search() {
 
-const VITE_API_URL = import.meta.env.VITE_API_URL;
+const VITE_API_URL = "/api";
   const [sidebarData, setsidebarData] = useState({
     searchTerm : '',
     type : 'all',

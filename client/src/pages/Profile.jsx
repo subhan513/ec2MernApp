@@ -7,7 +7,7 @@ const Profile = () => {
   const { currentUser } = useSelector((state) => state.user);
   const fileRef = useRef();
 
-const VITE_API_URL = import.meta.env.VITE_API_URL;
+const VITE_API_URL = "/api";
   const [formData, setFormData] = useState({
     username: currentUser.username || '',
     email: currentUser.email || '',
@@ -64,7 +64,7 @@ const VITE_API_URL = import.meta.env.VITE_API_URL;
         delete updateData.password;
       }
 
-      const ProfileApiResponse = await fetch(`${VITE_API_URL}/api/user/update/${id}`, {
+      const ProfileApiResponse = await fetch(`${VITE_API_URL}/user/update/${id}`, {
         method: "POST",
         credentials : "include",
         headers: {

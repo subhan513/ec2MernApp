@@ -6,7 +6,7 @@ import {signInStart,signInSuccess,signInFailure} from "../redux/user/userSlice.j
 import OAuth from '../components/OAuth.jsx';
 const SignIn = () => {
 
-const VITE_API_URL = import.meta.env.VITE_API_URL;
+const VITE_API_URL = "/api";
   const [formData, setformData] = useState({})
   const dispatch = useDispatch()
   const navigate = useNavigate()
