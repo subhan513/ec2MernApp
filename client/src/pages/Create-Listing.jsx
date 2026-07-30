@@ -4,7 +4,7 @@ import {useSelector} from "react-redux"
 import {useNavigate} from "react-router-dom"
 
 const CreateListing = () => {
-  const VITE_API_URL ="https://real-estate-eight-snowy.vercel.app"
+const VITE_API_URL = import.meta.env.VITE_API_URL;
   const {currentUser} = useSelector((state)=>state.user)
   const navigate = useNavigate();
 const [FormData, setFormData] = useState({

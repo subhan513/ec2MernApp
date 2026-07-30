@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 const Contact = ({ listing }) => {
 
-  const VITE_API_URL ="https://real-estate-eight-snowy.vercel.app"
+const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [landloardData, setlandloardData] = useState(null)
   const [message, setmessage] = useState('') // Change from null to empty string
 

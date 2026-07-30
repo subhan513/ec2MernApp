@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 
 const UpdateListing = () => {
 
-  const VITE_API_URL ="https://real-estate-eight-snowy.vercel.app"
+const VITE_API_URL = import.meta.env.VITE_API_URL;
   const {currentUser} = useSelector((state)=>state.user)
   const navigate = useNavigate();
   const params = useParams();

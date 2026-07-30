@@ -1,0 +1,31 @@
+services:
+
+  backend:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+
+    container_name: realestate-api
+
+    ports:
+      - "5000:3000"
+
+    env_file:
+      - ./api/.env
+
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+
+    container_name: realestate-client
+
+    ports:
+      - "80:80"
+
+    depends_on:
+      - backend
+
+    restart: unless-stopped

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import OAuth from '../components/OAuth';
 const SignUp = () => {
 
-  const VITE_API_URL ="https://real-estate-eight-snowy.vercel.app"
+const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [formData, setformData] = useState({})
   const [error, seterror] = useState(null)
   const [loading, setloading] = useState(false)

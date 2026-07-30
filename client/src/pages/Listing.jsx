@@ -20,7 +20,7 @@ import Contact from '../components/Contact.jsx';
 
 export default function Listing() {
 
-   const VITE_API_URL ="https://real-estate-eight-snowy.vercel.app"
+const VITE_API_URL = import.meta.env.VITE_API_URL;
   SwiperCore.use([Navigation]);
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(false);

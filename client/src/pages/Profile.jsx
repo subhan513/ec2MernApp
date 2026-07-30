@@ -7,7 +7,7 @@ const Profile = () => {
   const { currentUser } = useSelector((state) => state.user);
   const fileRef = useRef();
 
-  const VITE_API_URL ="https://real-estate-eight-snowy.vercel.app"
+const VITE_API_URL = import.meta.env.VITE_API_URL;
   const [formData, setFormData] = useState({
     username: currentUser.username || '',
     email: currentUser.email || '',

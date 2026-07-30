@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom"
 import { app } from "../firebase";
 const OAuth = () => {
 
-  const VITE_API_URL ="https://real-estate-eight-snowy.vercel.app"
+const VITE_API_URL = import.meta.env.VITE_API_URL;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   
