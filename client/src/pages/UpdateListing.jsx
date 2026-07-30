@@ -35,7 +35,7 @@ const [loading, setloading] = useState(false)
 useEffect(() => {
   const fetchListing = async () => {
     const listingId = params.id;
-    const res = await fetch(`${VITE_API_URL}/api/listing/get/${listingId}`,{
+    const res = await fetch(`${VITE_API_URL}/listing/get/${listingId}`,{
       credentials : "include"
     }) 
     const data = await res.json();

@@ -34,7 +34,7 @@ const VITE_API_URL = import.meta.env.VITE_API_URL;
     const fetchListing = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`${VITE_API_URL}/api/listing/get/${params.id}`);
+        const res = await fetch(`${VITE_API_URL}/listing/get/${params.id}`);
         const data = await res.json();
         if (data.success === false) {
           setError(true);

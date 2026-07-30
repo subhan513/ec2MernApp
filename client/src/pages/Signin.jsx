@@ -19,7 +19,7 @@ const handleSubmit = async (e) => {
   
   try {
     dispatch(signInStart())
-    const response = await fetch(`${VITE_API_URL}/api/auth/signin`, { 
+    const response = await fetch(`${VITE_API_URL}/auth/signin`, { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

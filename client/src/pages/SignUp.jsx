@@ -19,7 +19,7 @@ const handleSubmit = async (e) => {
   
   try {
     setloading(true)
-    const response = await fetch(`${VITE_API_URL}/api/auth/signup`, { // ← YAHI CHANGE KARO
+    const response = await fetch(`${VITE_API_URL}/auth/signup`, { // ← YAHI CHANGE KARO
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

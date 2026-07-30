@@ -119,7 +119,7 @@ try {
     return seterror("Discount Price must be lower than te regular price")  
   }
     setloading(true)
-  const response = await fetch(`${VITE_API_URL}/api/listing/create`,{
+  const response = await fetch(`${VITE_API_URL}/listing/create`,{
     method : "POST",
     credentials : "include",
     headers : {

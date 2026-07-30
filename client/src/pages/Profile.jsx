@@ -100,7 +100,7 @@ const VITE_API_URL = import.meta.env.VITE_API_URL;
   const handleDeleteUser = async () =>{
     try {
       dispatch(deleteStart())
-      const DeleteUserApiResponse = await fetch(`${VITE_API_URL}/api/user/delete/${currentUser._id}`,{
+      const DeleteUserApiResponse = await fetch(`${VITE_API_URL}/user/delete/${currentUser._id}`,{
       method : "DELETE", 
       credentials : "include",
       headers : {

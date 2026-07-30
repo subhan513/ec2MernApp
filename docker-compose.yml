@@ -1,25 +1,21 @@
+version: "3.9"
+
 services:
 
   backend:
-    build:
-      context: ./api
-      dockerfile: Dockerfile
-
+    image: 220282357772.dkr.ecr.ap-southeast-2.amazonaws.com/realestate-api:latest
     container_name: realestate-api
 
-    ports:
-      - "5000:3000"
-
     env_file:
-      - ./api/.env
+      - .env
 
-    restart: unless-stopped
+    expose:
+      - "5000"
+
+    restart: always
 
   frontend:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-
+    image: 220282357772.dkr.ecr.ap-southeast-2.amazonaws.com/realestate-client:latest
     container_name: realestate-client
 
     ports:
@@ -28,4 +24,4 @@ services:
     depends_on:
       - backend
 
-    restart: unless-stopped
+    restart: always

@@ -12,6 +12,7 @@ const Home = () => {
 
 
 const VITE_API_URL = import.meta.env.VITE_API_URL;
+console.log("API URL:", import.meta.env.VITE_API_URL);
   SwiperCore.use([Navigation]) // FIX: Use array
   const [offerlistings, setofferlistings] = useState([]);
   console.log(offerlistings);
@@ -24,7 +25,7 @@ useEffect(() => {
   const fetchOfferListings = async () =>{
     try {
       // FIX 1: Add 'await' here
-      const res = await fetch(`${VITE_API_URL}/api/listing/get?offer=true&limit=4`);
+      const res = await fetch(`${VITE_API_URL}/listing/get?offer=true&limit=4`);
       const data = await res.json();
       setofferlistings(data)
       await fetchRentListings();
@@ -34,7 +35,7 @@ useEffect(() => {
   } 
   const fetchRentListings = async () =>{
     try {
-      const res  = await fetch(`${VITE_API_URL}/api/listing/get?type=rent&limit=4`);
+      const res  = await fetch(`${VITE_API_URL}/listing/get?type=rent&limit=4`);
       const data = await res.json();
       setrentlisting(data)
       fetchSaleListings();
@@ -44,7 +45,7 @@ useEffect(() => {
   }
   const fetchSaleListings = async () =>{
 try {
-  const res = await fetch(`${VITE_API_URL}/api/listing/get?type=sale&limit=4`);
+  const res = await fetch(`${VITE_API_URL}/listing/get?type=sale&limit=4`);
   const data = await res.json();
   setsaleListing(data)
 } catch (error) {

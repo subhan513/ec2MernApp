@@ -12,7 +12,7 @@ const VITE_API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
     const fetchLandLord = async () => {
       try {
-        const res = await fetch(`${VITE_API_URL}/api/user/${listing.userRef}`)
+        const res = await fetch(`${VITE_API_URL}/user/${listing.userRef}`)
         const data = await res.json();
         setlandloardData(data)
       } catch (error) {

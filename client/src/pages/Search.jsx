@@ -90,7 +90,7 @@ const [ShowMore,setShowMore] = useState();
   const fetchListings = async () => {
    setloading(true);
    const searchQuery = urlParams.toString()
-   const response = await fetch(`${VITE_API_URL}/api/listing/get?${searchQuery}`)
+   const response = await fetch(`${VITE_API_URL}/listing/get?${searchQuery}`)
    const listings = await response.json();
    if(listings.length > 8){
     setShowMore(true)

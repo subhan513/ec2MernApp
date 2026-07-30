@@ -4,4 +4,3 @@ dist
 .github
 Dockerfile
 README.md
-.env
