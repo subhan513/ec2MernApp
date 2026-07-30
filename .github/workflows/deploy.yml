@@ -51,7 +51,9 @@ jobs:
       # -----------------------
       - name: Build Frontend Docker Image
         run: |
-          docker build -t realestate-client ./client
+         docker build \
+         --build-arg VITE_API_URL=${{ secrets.VITE_API_URL }} \
+         -t realestate-client ./client
 
       # Tag Frontend Image
       - name: Tag Frontend Image
