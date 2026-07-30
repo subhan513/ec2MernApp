@@ -70,7 +70,6 @@ const VITE_API_URL = "/api";
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include",
         body: JSON.stringify(updateData)
       });
 
@@ -116,7 +115,7 @@ const VITE_API_URL = "/api";
   const handleSignOutClick = async () =>{
    try {
    dispatch(SignoutStart())
-    const Response = await fetch(`${VITE_API_URL}/api/user/logout`)
+    const Response = await fetch(`${VITE_API_URL}/user/logout`)
      const data = await Response.json();
      if(data.success === false){
       dispatch(SignoutFailure(data.message))
@@ -134,7 +133,7 @@ const VITE_API_URL = "/api";
     try {
     setshowUplaodListings(true)
    setshowError(null)
-      const response  = await fetch(`${VITE_API_URL}/api/user/listings/${currentUser._id}`,{
+      const response  = await fetch(`${VITE_API_URL}/user/listings/${currentUser._id}`,{
         credentials : "include"
       })
       const data = await response.json();
@@ -152,7 +151,7 @@ const VITE_API_URL = "/api";
 
   const handleDeleteListing = async (listingID) =>{
 try {
-  const response = await fetch(`${VITE_API_URL}/api/listing/listings/${listingID}`,{
+  const response = await fetch(`${VITE_API_URL}/listing/listings/${listingID}`,{
     method : "DELETE",
     credentials : "include"
   })
